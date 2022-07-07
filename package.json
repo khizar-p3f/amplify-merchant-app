@@ -58,9 +58,9 @@
     "webpack-dev-server": "^4.4.0"
   },
   "scripts": {
-    "start": "serve ./dist/",
-    "dev": "concurrently  \"set NODE_ENV=production && webpack --config ./src/webpack.config.js\" \"serve ./dist/\"",
-    "build": "rm -rf ./dist/ && webpack --config ./src/webpack.config.js",
+    "start": "serve -s ./build/",
+    "dev": "concurrently  \"set NODE_ENV=production && webpack --config ./src/webpack.config.js\" \"serve -s ./build/\"",
+    "build": "rm -rf ./build/ && webpack --config ./src/webpack.config.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
