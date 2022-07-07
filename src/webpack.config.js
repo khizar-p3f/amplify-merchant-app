@@ -5,7 +5,7 @@ require("dotenv").config()
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-const NODE_ENV = process.env.mode || "development"
+const NODE_ENV = process.env.mode || "production"
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: path.join(__dirname, '../public/index.html'), 
   filename: "index.html",
