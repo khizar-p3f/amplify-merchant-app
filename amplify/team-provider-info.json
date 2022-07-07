@@ -10,6 +10,17 @@
       "StackName": "amplify-amplifyd7528a7fd2de4-staging-130534",
       "StackId": "arn:aws:cloudformation:us-east-1:039289871235:stack/amplify-amplifyd7528a7fd2de4-staging-130534/7cf1f7d0-fdf5-11ec-b445-120638875349",
       "AmplifyAppId": "d3aqrt7sczi3f2"
+    },
+    "categories": {
+      "auth": {
+        "amplifymerchantapp": {}
+      },
+      "storage": {
+        "amplifymerchantapp88c55503": {
+          "bucketName": "amplify-amplify3df00f65d57a4-staging-40445-deployment",
+          "region": "us-east-1"
+        }
+      }
     }
   }
 }

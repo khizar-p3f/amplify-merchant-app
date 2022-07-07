@@ -33,5 +33,13 @@
         ]
       }
     }
+  },
+  "storage": {
+    "amplifymerchantapp88c55503": {
+      "service": "S3",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": []
+    }
   }
 }
