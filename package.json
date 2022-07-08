@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@aws-amplify/ui-react": "^3.0.4",
     "@babel/core": "^7.0.0-rc.2",
     "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0-rc.2",
@@ -13,6 +14,7 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "antd": "^4.18.0",
+    "aws-amplify": "^4.3.27",
     "axios": "^0.18.0",
     "babel-eslint": "^8.2.6",
     "babel-loader": "^8.0.0-beta.6",
@@ -58,9 +60,10 @@
     "webpack-dev-server": "^4.4.0"
   },
   "scripts": {
+    "clean": "rm -rf ./build/",
     "start": "serve -s ./build/",
-    "dev": "concurrently  \"set NODE_ENV=production && webpack --config ./src/webpack.config.js\" \"serve -s ./build/\"",
-    "build": "rm -rf ./build/ && webpack --config ./src/webpack.config.js",
+    "dev": "npm run clean && concurrently  \"webpack --config ./src/webpack.dev.js\" \"serve -s ./build/\"",
+    "build": "npm run clean && webpack --config ./src/webpack.config.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

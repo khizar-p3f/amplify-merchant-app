@@ -5,7 +5,7 @@ require("dotenv").config()
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-const NODE_ENV ="production"
+const NODE_ENV ="development"
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: path.join(__dirname, '../public/index.html'), 
   filename: "index.html",
@@ -18,9 +18,9 @@ console.info({
 })
 console.log("---------------------- WEBPACK ------------------")
 module.exports = {
-  devtool:  false,
+  devtool:'source-map',
   mode: NODE_ENV,//"production",
-  watch:  false ,
+  watch: true,
   entry: {
     main: path.resolve(__dirname, 'index.js'),
   },
