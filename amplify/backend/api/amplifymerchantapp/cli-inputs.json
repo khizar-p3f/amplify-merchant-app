@@ -3,11 +3,12 @@
   "serviceConfiguration": {
     "apiName": "amplifymerchantapp",
     "serviceName": "AppSync",
-    "gqlSchemaPath": "/tmp/amplify-8215a573-206d-47c7-9adf-be3382652543/amplify/backend/api/amplifymerchantapp/schema.graphql",
+    "gqlSchemaPath": "C:\\p3f\\amplify-merchant-app\\amplify\\backend\\api\\amplifymerchantapp\\schema.graphql",
     "defaultAuthType": {
       "mode": "API_KEY",
-      "keyDescription": "api key description",
-      "expirationTime": 30
+      "expirationTime": 365,
+      "apiKeyExpirationDate": "2023-07-09T17:20:10.570Z",
+      "keyDescription": "api key description"
     },
     "additionalAuthTypes": [
       {

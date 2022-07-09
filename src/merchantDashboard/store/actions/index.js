@@ -56,12 +56,20 @@ axios.interceptors.response.use(
  * GET
  * User detail 
  */
-export const updateUser = async (data) => {
+export const updateUser = async (user) => {
   //let response = await axios.get('/api/user/')
 
   return {
-    type: 'UPDATE_USER',
-    payload: data
+    type: 'GET_USERS',
+    payload: {...user}
+  };
+}
+export const updatePayments =(payments)=> {
+  //let response = await axios.get('/api/user/')
+
+  return {
+    type: 'UPDATE_PAYMENTS',
+    payload: payments
   };
 }
 

@@ -53,7 +53,7 @@
       "Google"
     ],
     "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid profile\",\"AttributeMapping\":{\"name\":\"name\",\"username\":\"sub\"}}]",
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000\",\"http://localhost:8000\",\"http://localhost\"],\"LogoutURLs\":[\"http://localhost:3000\",\"http://localhost:8000\",\"http://localhost\"]}",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000\",\"http://localhost:8000\",\"http://localhost\",\"https://master.d3aqrt7sczi3f2.amplifyapp.com\"],\"LogoutURLs\":[\"http://localhost:3000\",\"http://localhost:8000\",\"http://localhost\",\"https://master.d3aqrt7sczi3f2.amplifyapp.com\"]}",
     "usernameCaseSensitive": false,
     "useEnabledMfas": true,
     "authRoleArn": {

@@ -6,11 +6,14 @@ import "../theme/index.less";
 import img2 from "../assets/images/svg8.svg";
 import LandingPageHeader from "../component/header";
 import SimpleLineIcon from "react-simple-line-icons";
-import { Auth, Hub } from "aws-amplify";
+import { Auth } from "aws-amplify";
 import { CognitoHostedUIIdentityProvider } from "@aws-amplify/auth";
+import { useDispatch } from "react-redux";
+import { updateUser } from "../../merchantDashboard/store/actions/index";
+import { redirectTo } from "@reach/router";
 
 const LandingSignupPage = () => {
-
+    const dispatch = useDispatch()
     const initialState = {
         page: 0,
         user: null,
@@ -31,23 +34,10 @@ const LandingSignupPage = () => {
     const [state, setState] = useState({
         ...initialState,
     });
+
+    useEffect(()=>{},[])
     
 
-    const unsubscribe = Hub.listen("auth", ({ payload: { event, data } }) => {
-        switch (event) {
-            case "signIn":
-                //setUser(data);
-                setState({ ...state, user: data });
-                break;
-            case "signOut":
-                //setUser(null);
-                setState({ ...state, user: null });
-                break;
-            case "customOAuthState":
-                setState({ ...state, user: data });
-            //setCustomState(data);
-        }
-    });
 
     return (
         <Layout className="layout">
@@ -91,7 +81,7 @@ const SignupSection=(props)=>{
                 username:signupForm.email,
                 email:signupForm.email,
                 password:signupForm.password,
-                attributes: {
+                attributes: {                    
                     name:signupForm.name,
                     email:signupForm.email,
                     phone_number:signupForm.phone_number
@@ -272,16 +262,19 @@ const SignupSection=(props)=>{
 }
 
 const LoginSection=(props)=>{
+    const dispatch = useDispatch()
     const {state, setState}=props
     const Login = () => {
         Auth.signIn(state.loginForm.email, state.loginForm.password)
             .then((res) => {
+               
                 setState({ ...state, loginData: res });
-                console.log({ res });
+                dispatch(updateUser(res))
+                redirectTo("app/users")
             })
             .catch((ex) => {
+                console.error({ex});
                 setState({ ...state, loginData: {}, loginError: ex.message });
-                console.error({ ex });
             });
     };
     return(
@@ -345,7 +338,7 @@ const LoginSection=(props)=>{
                         } />
                     </Form.Item>
 
-                    {props.loginError && <Col span={24}><Alert type="error" banner message={props.loginError} /></Col>}
+                    {state.loginError && <Col span={24}><Alert type="error" banner message={state.loginError} /></Col>}
                     <Form.Item
                         wrapperCol={{
                             span: 24,

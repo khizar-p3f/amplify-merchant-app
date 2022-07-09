@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Router } from "@reach/router";
 import LandingPageMain from "./landing";
+import MerchantDashboard from './maindashboard'
 import reportWebVitals from "./reportWebVitals";
 import { Amplify } from 'aws-amplify';
 import awsExports from './aws-exports';
@@ -9,9 +10,12 @@ Amplify.configure(awsExports);
 
 
 ReactDOM.render(
-  <Router basepath="/">
-    <LandingPageMain path="/*" />
-  </Router>,
+  <React.StrictMode>
+    <Router basepath="/">
+      <LandingPageMain path="/*" />
+      <MerchantDashboard path="/app/*" />
+    </Router>
+  </React.StrictMode>,
   document.getElementById("root")
 );
 
