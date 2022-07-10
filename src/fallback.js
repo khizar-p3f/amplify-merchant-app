@@ -4,7 +4,7 @@ const Fallback = ()=>{
     return(
         <div>
             <center>
-                <h1 style={{ margin: "500px 300px", textAlign: 'center' }}>Loading...</h1>
+                <h1 style={{ margin: "500px 300px", textAlign: 'center',fontWeight:'900' }}>Loading...</h1>
             </center>
         </div>
     )
