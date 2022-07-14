@@ -1,0 +1,18 @@
+projects:
+  amplifymerchantapp:
+    schemaPath: amplify/backend/api/amplifymerchantapp/build/schema.graphql
+    includes:
+      - mutations
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: javascript
+        generatedFileName: ''
+        docsFilePath: .
+        region: us-east-1
+        apiId: null
+        maxDepth: 2
+extensions:
+  amplify:
+    version: 3

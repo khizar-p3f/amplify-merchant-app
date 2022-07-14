@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "auth": {
+      "amplifymerchantapp": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    },
+    "api": {
+      "amplifymerchantapp": [
+        "Query",
+        "Mutation",
+        "Subscription"
+      ]
+    }
+  },
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "hostname",
+      "environmentVariableName": "hostname"
+    }
+  ]
+}

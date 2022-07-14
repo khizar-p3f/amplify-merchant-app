@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/integrations": {
+      "name": "/integrations",
+      "lambdaFunction": "amplifymerchantappd3df1a1d",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

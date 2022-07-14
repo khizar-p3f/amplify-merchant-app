@@ -10,15 +10,15 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "vendor_name": {
-                    "name": "vendor_name",
+                "merchant_id": {
+                    "name": "merchant_id",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "api_key": {
-                    "name": "api_key",
+                "vendor_name": {
+                    "name": "vendor_name",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
@@ -45,19 +45,12 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "Merchants": {
-                    "name": "Merchants",
-                    "isArray": true,
-                    "type": {
-                        "model": "PaymentsMerchants"
-                    },
+                "api_key": {
+                    "name": "api_key",
+                    "isArray": false,
+                    "type": "String",
                     "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true,
-                    "association": {
-                        "connectionType": "HAS_MANY",
-                        "associatedWith": "payments"
-                    }
+                    "attributes": []
                 },
                 "createdAt": {
                     "name": "createdAt",
@@ -111,8 +104,8 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "name": {
-                    "name": "name",
+                "merchant_id": {
+                    "name": "merchant_id",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
@@ -120,6 +113,13 @@ export const schema = {
                 },
                 "company": {
                     "name": "company",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "established": {
+                    "name": "established",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
@@ -146,19 +146,19 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "paymentss": {
-                    "name": "paymentss",
-                    "isArray": true,
-                    "type": {
-                        "model": "PaymentsMerchants"
-                    },
+                "email": {
+                    "name": "email",
+                    "isArray": false,
+                    "type": "String",
                     "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true,
-                    "association": {
-                        "connectionType": "HAS_MANY",
-                        "associatedWith": "merchants"
-                    }
+                    "attributes": []
+                },
+                "name": {
+                    "name": "name",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
                 },
                 "createdAt": {
                     "name": "createdAt",
@@ -196,101 +196,7 @@ export const schema = {
                                     "delete",
                                     "read"
                                 ]
-                            },
-                            {
-                                "groupClaim": "cognito:groups",
-                                "provider": "userPools",
-                                "allow": "groups",
-                                "groups": [
-                                    "merchants"
-                                ],
-                                "operations": [
-                                    "read",
-                                    "create",
-                                    "update",
-                                    "delete"
-                                ]
                             }
-                        ]
-                    }
-                }
-            ]
-        },
-        "PaymentsMerchants": {
-            "name": "PaymentsMerchants",
-            "fields": {
-                "id": {
-                    "name": "id",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "payments": {
-                    "name": "payments",
-                    "isArray": false,
-                    "type": {
-                        "model": "Payments"
-                    },
-                    "isRequired": true,
-                    "attributes": [],
-                    "association": {
-                        "connectionType": "BELONGS_TO",
-                        "targetName": "paymentsID"
-                    }
-                },
-                "merchants": {
-                    "name": "merchants",
-                    "isArray": false,
-                    "type": {
-                        "model": "Merchants"
-                    },
-                    "isRequired": true,
-                    "attributes": [],
-                    "association": {
-                        "connectionType": "BELONGS_TO",
-                        "targetName": "merchantsID"
-                    }
-                },
-                "createdAt": {
-                    "name": "createdAt",
-                    "isArray": false,
-                    "type": "AWSDateTime",
-                    "isRequired": false,
-                    "attributes": [],
-                    "isReadOnly": true
-                },
-                "updatedAt": {
-                    "name": "updatedAt",
-                    "isArray": false,
-                    "type": "AWSDateTime",
-                    "isRequired": false,
-                    "attributes": [],
-                    "isReadOnly": true
-                }
-            },
-            "syncable": true,
-            "pluralName": "PaymentsMerchants",
-            "attributes": [
-                {
-                    "type": "model",
-                    "properties": {}
-                },
-                {
-                    "type": "key",
-                    "properties": {
-                        "name": "byPayments",
-                        "fields": [
-                            "paymentsID"
-                        ]
-                    }
-                },
-                {
-                    "type": "key",
-                    "properties": {
-                        "name": "byMerchants",
-                        "fields": [
-                            "merchantsID"
                         ]
                     }
                 }
@@ -299,5 +205,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "bd913e537e26b190ef61c29bbcecfa46"
+    "version": "6b1df68199a93a29745ea500c8fe521d"
 };

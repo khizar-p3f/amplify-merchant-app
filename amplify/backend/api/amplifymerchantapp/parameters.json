@@ -2,11 +2,5 @@
   "AppSyncApiName": "amplifymerchantapp",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
   "DynamoDBEnableServerSideEncryption": false,
-  "AuthCognitoUserPoolId": {
-    "Fn::GetAtt": [
-      "authamplifymerchantapp",
-      "Outputs.UserPoolId"
-    ]
-  },
-  "AuthModeLastUpdated": "2022-07-09T17:20:16.230Z"
+  "AuthModeLastUpdated": "2022-07-11T19:01:33.592Z"
 }

@@ -4,10 +4,9 @@ import { schema } from './schema';
 
 
 
-const { Payments, Merchants, PaymentsMerchants } = initSchema(schema);
+const { Payments, Merchants } = initSchema(schema);
 
 export {
   Payments,
-  Merchants,
-  PaymentsMerchants
+  Merchants
 };

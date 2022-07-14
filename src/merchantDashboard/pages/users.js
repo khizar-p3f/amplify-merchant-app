@@ -11,12 +11,14 @@ import {
     Dropdown, Menu, Input
 } from 'antd';
 import moment from 'moment-timezone';
-import { redirectTo } from '@reach/router';
+import { DataStore } from '@aws-amplify/datastore';
+import { Merchants } from '../../models/';
+
 import { listMerchants } from '../../queries/listMerchants';
 const { Content } = Layout
 const { Search } = Input;
 
-const FetchMerchangts = () => {
+const fetchPaymentVendors = () => {
     return new Promise((resolve, reject) => {
         try {
             API.graphql(graphqlOperation(listMerchants)).then((res) => {
@@ -34,7 +36,7 @@ const FetchMerchangts = () => {
 
 const UsersList = () => {
     const dispatch = useDispatch()
-    const store = useSelector(store => store.user);
+    const store = useSelector(store => store.merchants);
     const dashboard = useSelector(store => store.dashboard);
     const initialState = {
         isListLoaded: false
@@ -44,7 +46,7 @@ const UsersList = () => {
 
 
     useEffect(() => {
-        FetchMerchangts().then((data) => {
+        fetchPaymentVendors().then((data) => {
             dispatch(updatePayments(data))
         }).catch((ex)=>{
             console.error({ex});
@@ -71,7 +73,7 @@ const UsersList = () => {
             dataIndex: 'name',
             key: 'name',
             ellipsis: true,
-            filters: _(store.usersList.data).map('name').uniq().value().map((rec) => { return { text: rec, value: rec } }),
+            filters: _(store.merchants.data).map('name').uniq().value().map((rec) => { return { text: rec, value: rec } }),
             onFilter: (value, record) => record.name.indexOf(value) === 0, defaultSortOrder: 'descend',
             sorter: (a, b) => sortString(a, b, 'name'),
             sortDirections: ['descend', 'ascend'],
@@ -89,7 +91,7 @@ const UsersList = () => {
             dataIndex: 'email',
             key: 'email',
             ellipsis: true,
-            filters: _(store.usersList.data).map('email').uniq().value().map((rec) => { return { text: rec, value: rec } }),
+            filters: _(store.merchants.data).map('email').uniq().value().map((rec) => { return { text: rec, value: rec } }),
             onFilter: (value, record) => record.email.indexOf(value) === 0, defaultSortOrder: 'descend',
             sorter: (a, b) => sortString(a, b, 'email'),
             sortDirections: ['descend', 'ascend'],

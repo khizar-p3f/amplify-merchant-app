@@ -1,19 +1,22 @@
 type Payments @model @auth(rules: [{allow: public}]) {
   id: ID!
+  merchant_id: String
   vendor_name: String
-  api_key: String
   secret_key: String
   email: String
   logo: String
-  Merchants: [Merchants] @manyToMany(relationName: "PaymentsMerchants")
+  api_key: String
 }
 
-type Merchants @model @auth(rules: [{allow: public}, {allow: groups, groups: ["merchants"], operations: [read, create, update, delete]}]) {
+type Merchants @model @auth(rules: [{allow: public}]) {
   id: ID!
-  name: String
+  merchant_id: String
   company: String
+  established:String
   country: String
   state: String
   city: String
-  paymentss: [Payments] @manyToMany(relationName: "PaymentsMerchants")
+  email: String
+  name: String
 }
+ 

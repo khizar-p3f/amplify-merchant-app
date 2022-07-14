@@ -20,6 +20,13 @@
           "bucketName": "amplify-amplify3df00f65d57a4-staging-40445-deployment",
           "region": "us-east-1"
         }
+      },
+      "function": {
+        "amplifymerchantappd3df1a1d": {
+          "hostname": "localhost",
+          "deploymentBucketName": "amplify-amplifyd7528a7fd2de4-staging-130534-deployment",
+          "s3Key": "amplify-builds/amplifymerchantappd3df1a1d-2b384872563758364c31-build.zip"
+        }
       }
     }
   }
