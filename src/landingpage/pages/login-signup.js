@@ -106,7 +106,6 @@ const SignupSection = (props) => {
                     name: signupForm.name,
                     state: signupForm.state,
                     established: "2022"
-
                 })
                 console.log({ newMerchantData });
                 DataStore.save(insertData).then((insid) => {
