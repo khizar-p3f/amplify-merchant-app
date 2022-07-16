@@ -3,6 +3,8 @@ backend:
   phases:
     build:
       commands:
+        - npm uninstall @aws-amplify/cli
+        - npm install -g colors@1.4.1 @aws-amplify/cli@9.1.0
         - amplifyPush --simple --allow-destructive-graphql-schema-updates
 frontend:
   phases:
