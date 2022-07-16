@@ -2,7 +2,7 @@ const AuthUtils = require("../utility/auth");
 var axios = require('axios').default;
 const txnController = {
 
-    npmgetAllTransactions: async (event) => {
+    getAllTransactions: async (event) => {
         try {
             let token = await AuthUtils.getAccessToken(event);
             var config = {
