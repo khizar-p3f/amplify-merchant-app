@@ -4,14 +4,7 @@ const disputesController = require('../controller/disputes');
 const txnController = require('../controller/transactions');
 
 const handler = async (event) => {
-    let response = {
-        statusCode: 200,
-        headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "*"
-        },
-        body: { result: "its  generic event" },
-    };
+    let response = { result: "Please define event_type" }    
     try {
         if (event.event_type === 'transactions') {
             response = await txnController.getAllTransactions(event)
@@ -21,15 +14,10 @@ const handler = async (event) => {
         return response
     } catch (error) {
         return {
-            statusCode: 500,
-            headers: {
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Headers": "*"
-            },
-            body: { error },
-        };
-    }
+            error
+        }
 
+    }
 }
 
 module.exports = handler
