@@ -1,5 +1,5 @@
 @primary-color: #6672ff;
-@secondary-color: #d966ff;
+@secondary-color: #dfd9e0;
 @white-color: #fff;
 @dark-grey-color: #777;
 @yellow-color: #ffff9c;
@@ -21,21 +21,20 @@
       width: 250px;
       float: left;
       font-family: "Caveat";
-      font-size: 22px;
+      font-size: 26px;
       color: #0d42bb;
-      margin: 0 15px;
+      margin: 0 10px;
       font-weight: bold;
     }
     .ant-menu-horizontal.ant-menu-light {
+      
       //line-height: 55px;
       .ant-menu-item {
         &.ant-menu-item-selected {
-          background-color: @secondary-color;
-          color: @white-color;
-          svg {
-            color: @white-color;
-          }
+          //border-left: solid 1px #e5e5e5;
+          //border-right: solid 1px #e5e5e5;
         }
+        padding: 0 10px;
         font-size: 16px;
         font-weight: 800;
         svg {
@@ -77,6 +76,13 @@
     .ant-menu.ant-menu-light {
       &.ant-menu-inline-collapsed {
         .ant-menu-item {
+          .ant-menu-title-content{
+           
+            div{
+              padding: 0 30px;
+              margin-left: -32px;
+            }
+          }
           svg {
             color: @dark-grey-color;
             font-size: 18px;
@@ -108,6 +114,15 @@
   }
 }
 
-.boxshadow{
-    box-shadow: @box-shadow;
+.boxshadow {
+  box-shadow: @box-shadow;
+}
+.border-radius {
+  border-radius: 10px;
+}
+
+[class*="icon-"] {
+  font-size: 16px;
+  padding-right: 10px;
+  display: inline-block;
 }
